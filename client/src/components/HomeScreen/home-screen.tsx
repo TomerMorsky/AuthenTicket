@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react";
 import UsernameTextField from "../UserNameTextField/username-text-field";
 import UserPasswordTextField from "../PasswordTextField/password-text-field";
+import styles from './home-screen.module.scss'
 
 const HomeScreen: FC = () => {
 
@@ -8,7 +9,7 @@ const HomeScreen: FC = () => {
     const [password, setPassword] = useState("");
 
     return (
-        <div>
+        <div className={styles.homeScreenContainer}>
             <UsernameTextField userName={username} onUsernameChanged={setUsername}/>
             <UserPasswordTextField userPassword={password} onPasswordChanged={setPassword}/>
         </div>
