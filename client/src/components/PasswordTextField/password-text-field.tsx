@@ -2,6 +2,7 @@ import { FormControl, InputLabel, Input, InputAdornment, IconButton } from "@mui
 import React, { FC, useState } from "react";
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import styles from './password-text-field.module.scss'
 
 
 interface UserPasswordTextFieldProps {
@@ -24,8 +25,8 @@ const UserPasswordTextField: FC<UserPasswordTextFieldProps> = ({ userPassword, o
 
     return (
         <>
-            <FormControl variant="standard">
-                <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
+            <FormControl variant="standard" className={styles.passwordFullWidth}>
+                <InputLabel>Password</InputLabel>
                 <Input
                     id="standard-adornment-password"
                     type={showPassword ? 'text' : 'password'}
@@ -34,7 +35,6 @@ const UserPasswordTextField: FC<UserPasswordTextFieldProps> = ({ userPassword, o
                     endAdornment={
                         <InputAdornment position="end">
                             <IconButton
-                                aria-label="toggle password visibility"
                                 onClick={handleClickShowPassword}>
                                 {showPassword ? <VisibilityOff /> : <Visibility />}
                             </IconButton>
