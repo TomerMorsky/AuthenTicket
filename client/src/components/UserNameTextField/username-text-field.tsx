@@ -9,8 +9,8 @@ interface UsernameTextFieldProps {
 const UsernameTextField: FC<UsernameTextFieldProps> = ({userName, onUsernameChanged}) => {
     
     const handleTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const usernameInput = event.target.value
-        onUsernameChanged(usernameInput)
+        const username = event.target.value
+        onUsernameChanged(username)
     }
 
     return (
@@ -18,9 +18,7 @@ const UsernameTextField: FC<UsernameTextFieldProps> = ({userName, onUsernameChan
             <TextField
                 value={userName}
                 onChange={handleTextChange}
-                id="standard-password-input"
                 label="username"
-                autoComplete="current-password"
                 variant="standard"
             />
         </div>
